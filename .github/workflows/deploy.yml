@@ -15,11 +15,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup SSH key
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+      - name: Install sshpass
+        run: sudo apt-get install sshpass
 
       - name: Deploy to server
+        env:
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         run: |
-          scp -r ./ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/clinipet
+          sshpass -p "$SERVER_PASSWORD" scp -o StrictHostKeyChecking=no -r ./* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/clinipet
