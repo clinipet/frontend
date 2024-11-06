@@ -29,4 +29,4 @@ jobs:
           overwrite: true
 
       - name: Print deployment message
-        run: echo "Alterações: ${{ github.event.inputs.deploy_message }}"
+        run: echo "Alteracoes: ${{ github.event.inputs.deploy_message }}"
