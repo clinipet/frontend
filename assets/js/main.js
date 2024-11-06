@@ -27,3 +27,16 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (1 == 1) {
+        alert('Recurso em desenvolvimento');
+    } else {
+        document.getElementById('loginAlert').style.display = 'block';
+    }
+});
