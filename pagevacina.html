@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CliniPet - Calendário de Vacinação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">CliniPet</a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">Início</a>
+                    <a href="#" class="nav-link">Serviços</a>
+                    <a href="#" class="nav-link">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="welcome-section">
+        <div class="container">
+            <h1>Calendário de Vacinação</h1>
+            <p>Guia geral para vacinação de cães e gatos</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="card">
+            <h2>Calendário de Vacinação para Cães</h2>
+            <div class="timeline">
+                <div class="vaccine-item left">
+                    <div class="content vaccine-applied">
+                        <h3>V10 <span class="tooltip">ℹ️<span class="tooltiptext">Protege contra várias doenças, incluindo parvovirose e cinomose</span></span></h3>
+                        <p>Primeira dose: 6-8 semanas</p>
+                        <p>Reforços: A cada 3-4 semanas até 16 semanas</p>
+                        <p>Revacinação: Anual</p>
+                    </div>
+                </div>
+                <div class="vaccine-item right">
+                    <div class="content vaccine-upcoming">
+                        <h3>Antirrábica <span class="tooltip">ℹ️<span class="tooltiptext">Previne a raiva, doença fatal que afeta o sistema nervoso</span></span></h3>
+                        <p>Primeira dose: 12-16 semanas</p>
+                        <p>Revacinação: Anual</p>
+                    </div>
+                </div>
+                <div class="vaccine-item left">
+                    <div class="content vaccine-optional">
+                        <h3>Gripe Canina <span class="tooltip">ℹ️<span class="tooltiptext">Protege contra a influenza canina, recomendada para cães que frequentam locais com outros animais</span></span></h3>
+                        <p>Recomendada: Consulte o veterinário</p>
+                        <p>Geralmente, duas doses iniciais com 2-4 semanas de intervalo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Calendário de Vacinação para Gatos</h2>
+            <div class="timeline">
+                <div class="vaccine-item left">
+                    <div class="content vaccine-applied">
+                        <h3>Tríplice Felina <span class="tooltip">ℹ️<span class="tooltiptext">Protege contra rinotraqueíte, calicivirose e panleucopenia</span></span></h3>
+                        <p>Primeira dose: 6-8 semanas</p>
+                        <p>Reforços: A cada 3-4 semanas até 16 semanas</p>
+                        <p>Revacinação: Anual</p>
+                    </div>
+                </div>
+                <div class="vaccine-item right">
+                    <div class="content vaccine-upcoming">
+                        <h3>Antirrábica <span class="tooltip">ℹ️<span class="tooltiptext">Previne a raiva, doença fatal que afeta o sistema nervoso</span></span></h3>
+                        <p>Primeira dose: 12-16 semanas</p>
+                        <p>Revacinação: Anual ou a cada 3 anos (dependendo da vacina)</p>
+                    </div>
+                </div>
+                <div class="vaccine-item left">
+                    <div class="content vaccine-optional">
+                        <h3>FeLV <span class="tooltip">ℹ️<span class="tooltiptext">Protege contra o vírus da leucemia felina</span></span></h3>
+                        <p>Recomendada: Consulte o veterinário</p>
+                        <p>Geralmente, duas doses iniciais com 3-4 semanas de intervalo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>Importante</h3>
+            <p>Este calendário é apenas um guia geral. Consulte sempre um veterinário para um plano de vacinação personalizado para o seu pet, considerando fatores como idade, saúde e estilo de vida.</p>
+        </div>
+
+        <button class="btn" onclick="exportCalendar()">Exportar Calendário</button>
+    </main>
+
+    <script>
+        function exportCalendar() {
+            alert('Calendário de vacinação exportado com sucesso!');
+        }
+    </script>
+</body>
+</html>
