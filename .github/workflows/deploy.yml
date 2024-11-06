@@ -15,15 +15,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy to server
-        uses: appleboy/scp-action@master
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.5.3
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "."
-          target: "/var/www/clinipet"
-          overwrite: true
+          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+
+      - name: Deploy to server
+        run: |
+          scp -r . ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/clinipet
 
       - name: Print deployment message
         run: echo "Alteracoes: ${{ github.event.inputs.deploy_message }}"
