@@ -17,12 +17,10 @@ jobs:
 
       - name: Setup SSH key
         uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+        with:$1ssh-private-key: "${{ secrets.SERVER_SSH_KEY }}"
 
       - name: Deploy to server
-        run: |
-          scp -r . ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/clinipet
+        run: |$1scp -r ./ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/clinipet
 
       - name: Print deployment message
         run: echo "Alteracoes: ${{ github.event.inputs.deploy_message }}"
