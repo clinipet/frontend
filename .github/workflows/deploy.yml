@@ -23,6 +23,3 @@ jobs:
       - name: Deploy to server
         run: |
           scp -r ./ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/clinipet
-
-      - name: Print deployment message
-        run: echo "Alteracoes: ${{ github.event.inputs.deploy_message }}"
