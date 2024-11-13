@@ -55,7 +55,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             if (data.token) {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', JSON.stringify(data.user));
-                window.location.href = 'http://localhost:50854/pages/dashboard';
+                window.location.href = 'https://clinipet.sytes.net/pages/dashboard';
             }
         })
         .catch(() => {
