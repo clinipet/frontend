@@ -1,0 +1,224 @@
+:root {
+    --primary-color: #4e54c8;
+    --secondary-color: #8f94fb;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #fff;
+    min-height: 100vh;
+}
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+.mobile-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mobile-brand {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    padding: 0.5rem;
+}
+.mobile-breadcrumb {
+    padding: 0.5rem 1rem;
+    background: #fff;
+    font-size: 0.9rem;
+    color: #666;
+}
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+.sidebar-brand {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    display: block;
+}
+.sidebar .nav-link {
+    color: #666;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: #f0f2ff;
+    color: var(--primary-color);
+}
+.sidebar .nav-link i {
+    width: 20px;
+}
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    background-color: #fff;
+}
+.card {
+    border: none;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    height: 100%;
+}
+.card-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.card-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.card-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+.table {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.table thead {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.table th, .table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+.table tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa;
+}
+.table-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
+}
+.table-card-header {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f2ff;
+    font-weight: 600;
+}
+.table-card-content {
+    padding: 1rem;
+}
+.table-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+.btn-edit, .btn-cancel {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-edit {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.btn-cancel {
+    background-color: #dc3545;
+    color: #fff;
+}
+.btn-edit:hover {
+    background-color: #3f44a0;
+}
+.btn-cancel:hover {
+    background-color: #c82333;
+}
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+@media (max-width: 768px) {
+    .mobile-header {
+        display: block;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 1001;
+    }
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0;
+        padding-top: 6rem;
+    }
+    .table {
+        display: none;
+    }
+    .table-mobile {
+        display: block;
+    }
+    .table-card {
+        display: block;
+    }
+    .card {
+        margin-bottom: 1rem;
+    }
+    .mobile-card {
+        padding: 1rem;
+    }
+    .mobile-card-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .mobile-card-title {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+    .mobile-card-value {
+        font-size: 2rem;
+    }
+}
+@media (min-width: 769px) {
+    .table-mobile {
+        display: none;
+    }
+}

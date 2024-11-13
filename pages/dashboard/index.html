@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CliniPet - Painel de Administração">
+    <title>CliniPet - Painel de Administração</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="../assets/css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+<!-- Mobile Header -->
+<header class="mobile-header">
+    <div class="mobile-header-content">
+        <button class="mobile-menu-btn" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="#" class="mobile-brand">CliniPet Admin</a>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-user"></i>
+        </button>
+    </div>
+    <div class="mobile-breadcrumb">
+        Dashboard > Administração
+    </div>
+</header>
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+    <a href="#" class="sidebar-brand">CliniPet Admin</a>
+    <div class="nav flex-column">
+        <a href="#" class="nav-link active">
+            <i class="fas fa-home"></i>
+            Dashboard
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-calendar-alt"></i>
+            Agendamentos
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-users"></i>
+            Clientes
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-paw"></i>
+            Pets
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-user-md"></i>
+            Veterinários
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-clipboard-list"></i>
+            Serviços
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-chart-bar"></i>
+            Relatórios
+        </a>
+        <a href="#" class="nav-link">
+            <i class="fas fa-cog"></i>
+            Configurações
+        </a>
+        <a href="login.html" class="nav-link">
+            <i class="fas fa-sign-out-alt"></i>
+            Sair
+        </a>
+    </div>
+</nav>
+
+<main class="main-content">
+    <h1 class="section-title">Administração</h1>
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-4 col-6">
+            <div class="card mobile-card">
+                <i class="fas fa-paw card-icon mobile-card-icon"></i>
+                <h3 class="card-title mobile-card-title">Pets Cadastrados</h3>
+                <p class="card-value mobile-card-value">200</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-6">
+            <div class="card mobile-card">
+                <i class="fas fa-calendar-check card-icon mobile-card-icon"></i>
+                <h3 class="card-title mobile-card-title">Consultas Hoje</h3>
+                <p class="card-value mobile-card-value">15</p>
+            </div>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+            <div class="card">
+                <i class="fas fa-chart-line card-icon"></i>
+                <h3 class="card-title">Faturamento Mensal</h3>
+                <p class="card-value">R$25k</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Agendamentos</h2>
+
+    <!-- Desktop Table -->
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Cliente</th>
+                <th>Pet</th>
+                <th>Serviço</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>09:00</td>
+                <td>Maria Silva</td>
+                <td>Rex</td>
+                <td>Consulta de Rotina</td>
+                <td>
+                    <button class="btn-edit me-2">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>10:30</td>
+                <td>João Santos</td>
+                <td>Luna</td>
+                <td>Vacinação</td>
+                <td>
+                    <button class="btn-edit me-2">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>14:00</td>
+                <td>Ana Oliveira</td>
+                <td>Mimi</td>
+                <td>Banho e Tosa</td>
+                <td>
+                    <button class="btn-edit me-2">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>15:30</td>
+                <td>Carlos Ferreira</td>
+                <td>Thor</td>
+                <td>Consulta de Emergência</td>
+                <td>
+                    <button class="btn-edit me-2">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>Beatriz Lima</td>
+                <td>Nala</td>
+                <td>Exames de Rotina</td>
+                <td>
+                    <button class="btn-edit me-2">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Mobile Table -->
+    <div class="table-mobile">
+        <div class="table-card">
+            <div class="table-card-header">
+                <strong>09:00</strong> - Maria Silva
+            </div>
+            <div class="table-card-content">
+                <p><strong>Pet:</strong> Rex</p>
+                <p><strong>Serviço:</strong> Consulta de Rotina</p>
+                <div class="table-card-actions">
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <div class="table-card-header">
+                <strong>10:30</strong> - João Santos
+            </div>
+            <div class="table-card-content">
+                <p><strong>Pet:</strong> Luna</p>
+                <p><strong>Serviço:</strong> Vacinação</p>
+                <div class="table-card-actions">
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <div class="table-card-header">
+                <strong>14:00</strong> - Ana Oliveira
+            </div>
+            <div class="table-card-content">
+                <p><strong>Pet:</strong> Mimi</p>
+                <p><strong>Serviço:</strong> Banho e Tosa</p>
+                <div class="table-card-actions">
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('show');
+        if (sidebar.classList.contains('show')) {
+            document.addEventListener('click', closeSidebarOnClickOutside);
+        } else {
+            document.removeEventListener('click', closeSidebarOnClickOutside);
+        }
+    }
+
+    function closeSidebarOnClickOutside(event) {
+        const sidebar = document.getElementById('sidebar');
+        const toggleButton = document.querySelector('.mobile-menu-btn');
+        if (!sidebar.contains(event.target) && event.target !== toggleButton) {
+            sidebar.classList.remove('show');
+            document.removeEventListener('click', closeSidebarOnClickOutside);
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
