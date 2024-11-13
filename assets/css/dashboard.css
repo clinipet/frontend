@@ -5,6 +5,38 @@
     --light-bg: #f8f9fa;
     --dark-bg: #343a40;
 }
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3a40a0;
+    border-color: #3a40a0;
+}
+
+.btn-edit,
+.btn-cancel,
+.btn-view {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+    border-radius: 0.25rem;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
@@ -159,23 +191,68 @@ body {
     background-color: var(--primary-color);
     color: #fff;
 }
+
+.btn-edit:hover {
+    background-color: #3a40a0;
+}
 .btn-cancel {
     background-color: #dc3545;
     color: #fff;
 }
-.btn-edit:hover {
-    background-color: #3f44a0;
-}
+
 .btn-cancel:hover {
-    background-color: #c82333;
+    background-color: #bb2d3b;
 }
+
 .section-title {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
     color: var(--text-color);
 }
+
+.btn-edit,
+.btn-cancel,
+.btn-view {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.btn-view:hover {
+    background-color: #7a7fd9;
+}
+
+.btn-edit {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-edit:hover {
+    background-color: #3a40a0;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-cancel:hover {
+    background-color: #bb2d3b;
+}
+
+.btn-view {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.btn-view:hover {
+    background-color: #7a7fd9;
+}
 @media (max-width: 768px) {
+    .btn-primary {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
     .mobile-header {
         display: block;
     }
@@ -215,6 +292,13 @@ body {
     }
     .mobile-card-value {
         font-size: 2rem;
+    }
+    .btn-primary,
+    .btn-edit,
+    .btn-cancel,
+    .btn-view {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
 }
 @media (min-width: 769px) {
