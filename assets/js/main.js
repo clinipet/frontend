@@ -38,7 +38,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         "password": password
     };
 
-    fetch('http://localhost:3000/api/auth/login', {
+    fetch('https://clinipet.sytes.net/api/auth/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
