@@ -19,3 +19,6 @@ Gemfile.lock
 
 # Intellij IDE
 .idea/
+
+#Config files
+assets/js/config.js
