@@ -1,9 +1,10 @@
+import { CONFIG } from './config.js';
 function verifyToken(){
     if(!localStorage.getItem('token')) {
         localStorage.clear();
-        window.location.href = 'https://clinipet.sytes.net/403.html';
+        window.location.href = `${CONFIG.BASE_URL}/pages/403.html`;
     }
-    fetch('https://clinipet.sytes.net/api/auth/verify', {
+    fetch(`${CONFIG.API_URL}/api/auth/verify`, {
         headers: {
             'x-access-token': localStorage.getItem('token')
         }
@@ -15,6 +16,6 @@ function verifyToken(){
         })
         .catch(() => {
             localStorage.clear();
-            window.location.href = 'https://clinipet.sytes.net/403.html';
+            window.location.href = `${CONFIG.BASE_URL}/pages/403.html`;
         });
 }

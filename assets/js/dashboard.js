@@ -1,5 +1,7 @@
+import { CONFIG } from './config.js';
+
 function totalPets(){
-    fetch('https://clinipet.sytes.net/api/pets/count', {
+    fetch(`${CONFIG.API_URL}api/pets/count`, {
         headers: {
             'x-access-token': localStorage.getItem('token')
         }
@@ -10,7 +12,7 @@ function totalPets(){
         })
         .catch(() => {
             localStorage.clear();
-            window.location.href = 'https://clinipet.sytes.net/403.html';
+            window.location.href = `${CONFIG.BASE_URL}/pages/403.html`;
         });
 }
 
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function openEditModal(id) {
-    // fetch(`https://clinipet.sytes.net/api/appointments/${id}`, {
+    // fetch(`${CONFIG.API_URL}/api/appointments/${id}`, {
     //     headers: {
     //         'x-access-token': localStorage.getItem('token')
     //     }
@@ -48,7 +50,7 @@ document.getElementById('saveEdit').addEventListener('click', function() {
     const id = document.getElementById('editId').value;
     const formData = new FormData(document.getElementById('editForm'));
 
-    fetch(`https://clinipet.sytes.net/api/appointments/${id}`, {
+    fetch(`${CONFIG.API_URL}/api/appointments/${id}`, {
         method: 'PUT',
         headers: {
             'x-access-token': localStorage.getItem('token'),
@@ -69,7 +71,7 @@ document.getElementById('saveEdit').addEventListener('click', function() {
 document.getElementById('confirmCancel').addEventListener('click', function() {
     const id = document.getElementById('cancelId').value;
 
-    // fetch(`https://clinipet.sytes.net/api/appointments/${id}`, {
+    // fetch(`${CONFIG.API_URL}/api/appointments/${id}`, {
     //     method: 'DELETE',
     //     headers: {
     //         'x-access-token': localStorage.getItem('token')
