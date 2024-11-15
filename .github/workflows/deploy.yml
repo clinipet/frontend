@@ -34,6 +34,7 @@ jobs:
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         run: |
           sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "
+           rm /var/www/clinipet/assets/js/config.js &&
            mv /var/www/clinipet/assets/js/config.model.js /var/www/clinipet/assets/js/config.js &&
            sed -i 's|%%API_URL%%|https://clinipet.sytes.net|g' /var/www/clinipet/assets/js/config.js &&
            sed -i 's|%%BASE_URL%%|https://clinipet.sytes.net|g' /var/www/clinipet/assets/js/config.js &&
