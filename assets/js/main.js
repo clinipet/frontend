@@ -57,7 +57,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             if (data.token) {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', JSON.stringify(data.user));
-                window.location.href = `${CONFIG.API_URL}/pages/dashboard`;
+                window.location.href = `${CONFIG.BASE_URL}/pages/dashboard`;
             }
         })
         .catch(() => {

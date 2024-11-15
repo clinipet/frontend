@@ -1,7 +1,7 @@
 import { CONFIG } from './config.js';
 
 function totalPets(){
-    fetch(`${CONFIG.API_URL}api/pets/count`, {
+    fetch(`${CONFIG.API_URL}/api/pets/count`, {
         headers: {
             'x-access-token': localStorage.getItem('token')
         }
