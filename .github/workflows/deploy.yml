@@ -30,6 +30,7 @@ jobs:
       - name: Set Environment Variables
         run: |
           sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USERNAME@$SERVER_HOST "
+           mv /var/www/clinipet/assets/js/config.model.js /var/www/clinipet/assets/js/config.js &&
            sed -i 's|%%API_URL%%|https://clinipet.sytes.net|g' /var/www/clinipet/assets/js/config.js &&
            sed -i 's|%%BASE_URL%%|https://clinipet.sytes.net|g' /var/www/clinipet/assets/js/config.js &&
            echo 'Frontend configurado.'
