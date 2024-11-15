@@ -8,9 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="../assets/css/dashboard.css" rel="stylesheet">
+    <link href="../../assets/css/dashboard.css" rel="stylesheet">
+    <script src="../../assets/js/validator.js" defer></script>
+    <script src="../../assets/js/dashboard.js" defer></script>
 </head>
-<body>
+<body onload="verifyToken()">
 <!-- Mobile Header -->
 <header class="mobile-header">
     <div class="mobile-header-content">
@@ -35,15 +37,15 @@
             <i class="fas fa-home"></i>
             Dashboard
         </a>
-        <a href="#" class="nav-link">
+        <a href="../dashboard/scheduling.html" class="nav-link">
             <i class="fas fa-calendar-alt"></i>
             Agendamentos
         </a>
-        <a href="#" class="nav-link">
+        <a href="../dashboard/clients.html" class="nav-link">
             <i class="fas fa-users"></i>
             Clientes
         </a>
-        <a href="#" class="nav-link">
+        <a href="../dashboard/pets.html" class="nav-link">
             <i class="fas fa-paw"></i>
             Pets
         </a>
@@ -63,7 +65,7 @@
             <i class="fas fa-cog"></i>
             Configurações
         </a>
-        <a href="login.html" class="nav-link">
+        <a href="../login.html" class="nav-link">
             <i class="fas fa-sign-out-alt"></i>
             Sair
         </a>
@@ -78,7 +80,7 @@
             <div class="card mobile-card">
                 <i class="fas fa-paw card-icon mobile-card-icon"></i>
                 <h3 class="card-title mobile-card-title">Pets Cadastrados</h3>
-                <p class="card-value mobile-card-value">200</p>
+                <p class="card-value mobile-card-value" id="totalPets"></p>
             </div>
         </div>
         <div class="col-md-4 col-6">
@@ -212,6 +214,61 @@
     </div>
 </main>
 
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Editar Agendamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <input type="hidden" id="editId">
+                    <div class="mb-3">
+                        <label for="editHora" class="form-label">Hora</label>
+                        <input type="time" class="form-control" id="editHora" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCliente" class="form-label">Cliente</label>
+                        <input type="text" class="form-control" id="editCliente" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPet" class="form-label">Pet</label>
+                        <input type="text" class="form-control" id="editPet" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editServico" class="form-label">Serviço</label>
+                        <input type="text" class="form-control" id="editServico" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="saveEdit">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Cancelamento -->
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelModalLabel">Cancelar Agendamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja cancelar este agendamento?</p>
+                <input type="hidden" id="cancelId">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-danger" id="confirmCancel">Sim, cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     function toggleSidebar() {
