@@ -4,3 +4,5 @@ const CONFIG = {
 };
 
 Object.freeze(CONFIG);
+
+export { CONFIG };
