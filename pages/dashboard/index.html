@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="../../assets/css/dashboard.css" rel="stylesheet">
     <script src="../../assets/js/validator.js" defer></script>
+    <script src="../../assets/js/dashboard.js" defer></script>
 </head>
 <body onload="verifyToken()">
 <!-- Mobile Header -->
@@ -79,7 +80,7 @@
             <div class="card mobile-card">
                 <i class="fas fa-paw card-icon mobile-card-icon"></i>
                 <h3 class="card-title mobile-card-title">Pets Cadastrados</h3>
-                <p class="card-value mobile-card-value">200</p>
+                <p class="card-value mobile-card-value" id="totalPets"></p>
             </div>
         </div>
         <div class="col-md-4 col-6">
@@ -213,6 +214,61 @@
     </div>
 </main>
 
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Editar Agendamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <input type="hidden" id="editId">
+                    <div class="mb-3">
+                        <label for="editHora" class="form-label">Hora</label>
+                        <input type="time" class="form-control" id="editHora" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCliente" class="form-label">Cliente</label>
+                        <input type="text" class="form-control" id="editCliente" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPet" class="form-label">Pet</label>
+                        <input type="text" class="form-control" id="editPet" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editServico" class="form-label">Serviço</label>
+                        <input type="text" class="form-control" id="editServico" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="saveEdit">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Cancelamento -->
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelModalLabel">Cancelar Agendamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja cancelar este agendamento?</p>
+                <input type="hidden" id="cancelId">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-danger" id="confirmCancel">Sim, cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     function toggleSidebar() {
