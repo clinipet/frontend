@@ -1,3 +1,5 @@
+import { CONFIG } from './config.js';
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -33,10 +35,37 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const payload = {
+        "email": email,
+        "password": password
+    };
 
-    if (1 == 1) {
-        alert('Recurso em desenvolvimento');
-    } else {
-        document.getElementById('loginAlert').style.display = 'block';
-    }
+    fetch(`${CONFIG.API_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Credenciais inválidas');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+                window.location.href = `${CONFIG.BASE_URL}/pages/dashboard`;
+            }
+        })
+        .catch(() => {
+            const loginAlert = document.getElementById('loginAlert');
+            loginAlert.style.display = 'block';
+
+            setTimeout(() => {
+                loginAlert.style.display = 'none';
+            }, 3000);
+        });
 });
