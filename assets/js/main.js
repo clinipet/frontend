@@ -1,3 +1,5 @@
+import { CONFIG } from './config.js';
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -38,7 +40,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         "password": password
     };
 
-    fetch('https://clinipet.sytes.net/api/auth/login', {
+    fetch(`${CONFIG.API_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -55,7 +57,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
             if (data.token) {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', JSON.stringify(data.user));
-                window.location.href = 'https://clinipet.sytes.net/pages/dashboard';
+                window.location.href = `${CONFIG.BASE_URL}/pages/dashboard`;
             }
         })
         .catch(() => {
