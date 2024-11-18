@@ -281,7 +281,7 @@ function updatePetsTable(pets) {
             <td>${formattedDate }</td>
             <td>
                 <button id="editAppointmentHome" class="btn-edit me-2" data-id="${pet.pet_id}">Editar</button>
-                <button class="btn-view" data-id="${client.client_id}">Ver Detalhes</button>
+                <button class="btn-view" data-id="${pet.pet_id}">Ver Detalhes</button>
             </td>
         `;
 
