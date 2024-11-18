@@ -89,14 +89,14 @@
       <div class="card">
         <i class="fas fa-calendar-plus card-icon"></i>
         <h3 class="card-title">Novos Agendamentos</h3>
-        <p class="card-value">8</p>
+        <p class="card-value">0</p>
       </div>
     </div>
     <div class="col-12 col-md-4">
       <div class="card">
         <i class="fas fa-calendar-week card-icon"></i>
         <h3 class="card-title">Total na Semana</h3>
-        <p class="card-value">72</p>
+        <p class="card-value" id="weeklyAppointmentsTotal">0</p>
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@
     </button>
   </div>
 
-  <div class="table-responsive">
+  <div class="table-responsive" id="appointmentsTable">
     <table class="table">
       <thead>
       <tr>
@@ -184,6 +184,49 @@
       </tr>
       </tbody>
     </table>
+    <div class="table-mobile">
+      <div class="table-card">
+        <div class="table-card-header">
+          <strong>09:00</strong> - Maria Silva
+        </div>
+        <div class="table-card-content">
+          <p><strong>Pet:</strong> Rex</p>
+          <p><strong>Serviço:</strong> Consulta de Rotina</p>
+          <div class="table-card-actions">
+            <button class="btn-edit">Editar</button>
+            <button class="btn-cancel">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-card-header">
+          <strong>10:30</strong> - João Santos
+        </div>
+        <div class="table-card-content">
+          <p><strong>Pet:</strong> Luna</p>
+          <p><strong>Serviço:</strong> Vacinação</p>
+          <div class="table-card-actions">
+            <button class="btn-edit">Editar</button>
+            <button class="btn-cancel">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-card-header">
+          <strong>14:00</strong> - Ana Oliveira
+        </div>
+        <div class="table-card-content">
+          <p><strong>Pet:</strong> Mimi</p>
+          <p><strong>Serviço:</strong> Banho e Tosa</p>
+          <div class="table-card-actions">
+            <button class="btn-edit">Editar</button>
+            <button class="btn-cancel">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 
