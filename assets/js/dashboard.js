@@ -218,7 +218,7 @@ function updateClientsTable(clients) {
     mobileTable.innerHTML = '';
 
     clients.forEach(client => {
-        let formattedDate = formatDate(client.last_appointment);
+        let formattedDate = (client.last_appointment === 'N/A') ? 'N/A' : formatDate(client.last_appointment);
         //Desktop
         const row = tableBody.insertRow();
         /*
@@ -246,14 +246,14 @@ function updateClientsTable(clients) {
         card.className = 'table-card';
         card.innerHTML = `
             <div class="table-card-header">
-                <strong>${pet.name}</strong> - ${pet.species}
+                <strong>${client.client_name}</strong> - ${client.formattedDate}
             </div>
             <div class="table-card-content">
-                <p><strong>Dono:</strong> ${pet.name}</p>
-                <p><strong>Raça:</strong> ${pet.breed}</p>
+                <p><strong>Pets:</strong> ${client.client_pets}</p>
+                <p><strong>Telefone:</strong> ${client.client_phone}</p>
                 <div class="table-card-actions">
-                    <button id="editAppointmentHome" class="btn-edit" data-id="${pet.id}" onclick="openEditModal(${pet.id})">Editar</button>
-                    <button id="cancelAppointmentHome" class="btn-cancel" data-id="${pet.id}" onclick="openCancelModal(${pet.id})">Cancelar</button>
+                    <button id="editAppointmentHome" class="btn-edit" data-id="${client.client_id}" onclick="openEditModal(${client.client_id})">Editar</button>
+                    <button id="cancelAppointmentHome" class="btn-cancel" data-id="${client.client_id}" onclick="openCancelModal(${client.client_id})">Cancelar</button>
                 </div>
             </div>
         `;
