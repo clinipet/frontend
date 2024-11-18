@@ -105,7 +105,7 @@ function loadNextAppointmentsHome() {
 }
 
 function loadPets() {
-    fetch(`${CONFIG.API_URL}/api/pets/`, {
+    fetch(`${CONFIG.API_URL}/api/pets/home`, {
         headers: {
             'x-access-token': localStorage.getItem('token')
         }
@@ -269,19 +269,19 @@ function updatePetsTable(pets) {
     mobileTable.innerHTML = '';
 
     pets.forEach(pet => {
-        let formattedTime = formatTime(pet.birth_date);
         //Desktop
+        const formattedDate = (pet.last_appointment === 'N/A') ? 'N/A' : formatDate(pet.last_appointment);
         const row = tableBody.insertRow();
         row.innerHTML = `
-            <td>${pet.name}</td>
-            <td>${pet.species}</td>
-            <td>${pet.breed}</td>
-            <td>${formattedTime}</td>
-            <td>${pet.name}</td>
-            <td>${formattedTime }</td>
+            <td>${pet.pet_name}</td>
+            <td>${pet.pet_specie}</td>
+            <td>${pet.pet_breed}</td>
+            <td>${pet.pet_age} ${(pet.pet_age > 1) ? 'anos' : 'ano'}</td>
+            <td>${pet.client_name}</td>
+            <td>${formattedDate }</td>
             <td>
-                <button id="editAppointmentHome" class="btn-edit me-2" data-id="${pet.id}">Editar</button>
-                <button id="cancelAppointmentHome" class="btn-cancel" data-id="${pet.id}">Cancelar</button>
+                <button id="editAppointmentHome" class="btn-edit me-2" data-id="${pet.pet_id}">Editar</button>
+                <button class="btn-view" data-id="${client.client_id}">Ver Detalhes</button>
             </td>
         `;
 
@@ -296,8 +296,8 @@ function updatePetsTable(pets) {
                 <p><strong>Dono:</strong> ${pet.name}</p>
                 <p><strong>Raça:</strong> ${pet.breed}</p>
                 <div class="table-card-actions">
-                    <button id="editAppointmentHome" class="btn-edit" data-id="${pet.id}" onclick="openEditModal(${pet.id})">Editar</button>
-                    <button id="cancelAppointmentHome" class="btn-cancel" data-id="${pet.id}" onclick="openCancelModal(${pet.id})">Cancelar</button>
+                    <button id="editAppointmentHome" class="btn-edit" data-id="${pet.pet_id}" onclick="openEditModal(${pet.pet_id})">Editar</button>
+                    <button id="cancelAppointmentHome" class="btn-cancel" data-id="${pet.pet_id}" onclick="openCancelModal(${pet.pet_id})">Cancelar</button>
                 </div>
             </div>
         `;
