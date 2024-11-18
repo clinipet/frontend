@@ -38,15 +38,15 @@
             <i class="fas fa-home"></i>
             Dashboard
         </a>
-        <a href="../dashboard/scheduling.html" class="nav-link">
+        <a href="./dashboard/scheduling.html" class="nav-link">
             <i class="fas fa-calendar-alt"></i>
             Agendamentos
         </a>
-        <a href="../dashboard/clients.html" class="nav-link">
+        <a href="./dashboard/clients.html" class="nav-link">
             <i class="fas fa-users"></i>
             Clientes
         </a>
-        <a href="../dashboard/pets.html" class="nav-link">
+        <a href="./dashboard/pets.html" class="nav-link">
             <i class="fas fa-paw"></i>
             Pets
         </a>
@@ -88,7 +88,7 @@
             <div class="card mobile-card">
                 <i class="fas fa-calendar-check card-icon mobile-card-icon"></i>
                 <h3 class="card-title mobile-card-title">Consultas Hoje</h3>
-                <p class="card-value mobile-card-value" id="totalAppointments"></p>
+                <p class="card-value mobile-card-value" id="totalAppointmentsToday"></p>
             </div>
         </div>
         <div class="col-md-4 d-none d-md-block">
@@ -103,7 +103,7 @@
     <h2 class="section-title">Próximos Agendamentos</h2>
 
     <!-- Desktop Table -->
-    <div class="table-responsive">
+    <div class="table-responsive" id="tableHome">
         <table class="table">
             <thead>
             <tr>
@@ -115,56 +115,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>09:00</td>
-                <td>Maria Silva</td>
-                <td>Rex</td>
-                <td>Consulta de Rotina</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-cancel">Cancelar</button>
-                </td>
-            </tr>
-            <tr>
-                <td>10:30</td>
-                <td>João Santos</td>
-                <td>Luna</td>
-                <td>Vacinação</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-cancel">Cancelar</button>
-                </td>
-            </tr>
-            <tr>
-                <td>14:00</td>
-                <td>Ana Oliveira</td>
-                <td>Mimi</td>
-                <td>Banho e Tosa</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-cancel">Cancelar</button>
-                </td>
-            </tr>
-            <tr>
-                <td>15:30</td>
-                <td>Carlos Ferreira</td>
-                <td>Thor</td>
-                <td>Consulta de Emergência</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-cancel">Cancelar</button>
-                </td>
-            </tr>
-            <tr>
-                <td>17:00</td>
-                <td>Beatriz Lima</td>
-                <td>Nala</td>
-                <td>Exames de Rotina</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-cancel">Cancelar</button>
-                </td>
-            </tr>
+
             </tbody>
         </table>
     </div>
@@ -226,16 +177,17 @@
                 <form id="editForm">
                     <input type="hidden" id="editId">
                     <div class="mb-3">
-                        <label for="editHora" class="form-label">Hora</label>
-                        <input type="time" class="form-control" id="editHora" required>
+                        <label for="editData" class="form-label">Data</label>
+                        <input type="datetime-local" class="form-control" id="editData" required>
                     </div>
                     <div class="mb-3">
                         <label for="editCliente" class="form-label">Cliente</label>
-                        <input type="text" class="form-control" id="editCliente" required>
+                        <input type="text" class="form-control" id="editCliente" disabled>
                     </div>
                     <div class="mb-3">
                         <label for="editPet" class="form-label">Pet</label>
-                        <input type="text" class="form-control" id="editPet" required>
+                        <select type="text" class="form-control" id="editPet" required>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="editServico" class="form-label">Serviço</label>

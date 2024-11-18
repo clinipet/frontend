@@ -9,6 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="../../assets/css/dashboard.css" rel="stylesheet">
+    <script src="../../assets/js/config.js" type="module" defer></script>
+    <script src="../../assets/js/validator.js" type="module" defer></script>
+    <script src="../../assets/js/dashboard.js" type="module" defer></script>
 </head>
 <body>
 <div class="menu-toggle">
@@ -64,7 +67,7 @@
             <div class="card">
                 <i class="fas fa-users card-icon"></i>
                 <h3 class="card-title">Total de Clientes</h3>
-                <p class="card-value">1,234</p>
+                <p class="card-value" id="totalClients"></p>
             </div>
         </div>
         <div class="col-12 col-md-4">
@@ -78,13 +81,13 @@
             <div class="card">
                 <i class="fas fa-paw card-icon"></i>
                 <h3 class="card-title">Pets Registrados</h3>
-                <p class="card-value">1,876</p>
+                <p class="card-value" id="totalPets"></p>
             </div>
         </div>
     </div>
 
     <h2 class="section-title">Lista de Clientes</h2>
-    <div class="table-responsive">
+    <div class="table-responsive" id="clientsTable">
         <table class="table">
             <thead>
             <tr>
@@ -97,63 +100,53 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Maria Silva</td>
-                <td>maria.silva@email.com</td>
-                <td>(11) 98765-4321</td>
-                <td>2</td>
-                <td>15/05/2023</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-view">Ver Detalhes</button>
-                </td>
-            </tr>
-            <tr>
-                <td>João Santos</td>
-                <td>joao.santos@email.com</td>
-                <td>(11) 91234-5678</td>
-                <td>1</td>
-                <td>20/05/2023</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-view">Ver Detalhes</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Ana Oliveira</td>
-                <td>ana.oliveira@email.com</td>
-                <td>(11) 99876-5432</td>
-                <td>3</td>
-                <td>18/05/2023</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-view">Ver Detalhes</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Carlos Ferreira</td>
-                <td>carlos.ferreira@email.com</td>
-                <td>(11) 95555-1234</td>
-                <td>1</td>
-                <td>22/05/2023</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-view">Ver Detalhes</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Beatriz Lima</td>
-                <td>beatriz.lima@email.com</td>
-                <td>(11) 93333-7890</td>
-                <td>2</td>
-                <td>19/05/2023</td>
-                <td>
-                    <button class="btn-edit me-2">Editar</button>
-                    <button class="btn-view">Ver Detalhes</button>
-                </td>
-            </tr>
             </tbody>
         </table>
+    </div>
+
+    <!-- Mobile Table -->
+    <div class="table-mobile">
+        <div class="table-card">
+            <div class="table-card-header">
+                <strong>09:00</strong> - Maria Silva
+            </div>
+            <div class="table-card-content">
+                <p><strong>Pet:</strong> Rex</p>
+                <p><strong>Serviço:</strong> Consulta de Rotina</p>
+                <div class="table-card-actions">
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <div class="table-card-header">
+                <strong>10:30</strong> - João Santos
+            </div>
+            <div class="table-card-content">
+                <p><strong>Pet:</strong> Luna</p>
+                <p><strong>Serviço:</strong> Vacinação</p>
+                <div class="table-card-actions">
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <div class="table-card-header">
+                <strong>14:00</strong> - Ana Oliveira
+            </div>
+            <div class="table-card-content">
+                <p><strong>Pet:</strong> Mimi</p>
+                <p><strong>Serviço:</strong> Banho e Tosa</p>
+                <div class="table-card-actions">
+                    <button class="btn-edit">Editar</button>
+                    <button class="btn-cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 
