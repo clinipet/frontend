@@ -9,6 +9,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="../../assets/css/dashboard.css" rel="stylesheet">
+  <script src="../../assets/js/config.js" type="module" defer></script>
+  <script src="../../assets/js/validator.js" type="module" defer></script>
+  <script src="../../assets/js/dashboard.js" type="module" defer></script>
 </head>
 <body>
 <div class="menu-toggle">
@@ -64,7 +67,7 @@
       <div class="card">
         <i class="fas fa-paw card-icon"></i>
         <h3 class="card-title">Total de Pets</h3>
-        <p class="card-value">1,876</p>
+        <p class="card-value" id="totalPets"></p>
       </div>
     </div>
     <div class="col-12 col-md-4">
@@ -90,7 +93,7 @@
     </button>
   </div>
 
-  <div class="table-responsive">
+  <div class="table-responsive" id="petsTable">
     <table class="table">
       <thead>
       <tr>
@@ -104,68 +107,52 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>Rex</td>
-        <td>Cão</td>
-        <td>Labrador</td>
-        <td>5 anos</td>
-        <td>Maria Silva</td>
-        <td>15/05/2023</td>
-        <td>
-          <button class="btn-edit me-2">Editar</button>
-          <button class="btn-view">Ver Detalhes</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Luna</td>
-        <td>Gato</td>
-        <td>Siamês</td>
-        <td>3 anos</td>
-        <td>João Santos</td>
-        <td>20/05/2023</td>
-        <td>
-          <button class="btn-edit me-2">Editar</button>
-          <button class="btn-view">Ver Detalhes</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Max</td>
-        <td>Cão</td>
-        <td>Golden Retriever</td>
-        <td>2 anos</td>
-        <td>Ana Oliveira</td>
-        <td>18/05/2023</td>
-        <td>
-          <button class="btn-edit me-2">Editar</button>
-          <button class="btn-view">Ver Detalhes</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Mimi</td>
-        <td>Gato</td>
-        <td>Persa</td>
-        <td>4 anos</td>
-        <td>Carlos Ferreira</td>
-        <td>22/05/2023</td>
-        <td>
-          <button class="btn-edit me-2">Editar</button>
-          <button class="btn-view">Ver Detalhes</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Thor</td>
-        <td>Cão</td>
-        <td>Rottweiler</td>
-        <td>6 anos</td>
-        <td>Beatriz Lima</td>
-        <td>19/05/2023</td>
-        <td>
-          <button class="btn-edit me-2">Editar</button>
-          <button class="btn-view">Ver Detalhes</button>
-        </td>
-      </tr>
+
       </tbody>
     </table>
+  </div>
+  <div class="table-mobile">
+    <div class="table-card">
+      <div class="table-card-header">
+        <strong>09:00</strong> - Maria Silva
+      </div>
+      <div class="table-card-content">
+        <p><strong>Pet:</strong> Rex</p>
+        <p><strong>Serviço:</strong> Consulta de Rotina</p>
+        <div class="table-card-actions">
+          <button class="btn-edit">Editar</button>
+          <button class="btn-cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-card-header">
+        <strong>10:30</strong> - João Santos
+      </div>
+      <div class="table-card-content">
+        <p><strong>Pet:</strong> Luna</p>
+        <p><strong>Serviço:</strong> Vacinação</p>
+        <div class="table-card-actions">
+          <button class="btn-edit">Editar</button>
+          <button class="btn-cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-card-header">
+        <strong>14:00</strong> - Ana Oliveira
+      </div>
+      <div class="table-card-content">
+        <p><strong>Pet:</strong> Mimi</p>
+        <p><strong>Serviço:</strong> Banho e Tosa</p>
+        <div class="table-card-actions">
+          <button class="btn-edit">Editar</button>
+          <button class="btn-cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 

@@ -9,6 +9,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="../../assets/css/dashboard.css" rel="stylesheet">
+  <script src="../../assets/js/config.js" type="module" defer></script>
+  <script src="../../assets/js/validator.js" type="module" defer></script>
+  <script src="../../assets/js/dashboard.js" type="module" defer></script>
 </head>
 <body>
 <div class="menu-toggle">
@@ -64,14 +67,14 @@
       <div class="card">
         <i class="fas fa-user-md card-icon"></i>
         <h3 class="card-title">Total de Veterinários</h3>
-        <p class="card-value">12</p>
+        <p class="card-value" id="totalVeterinarians"></p>
       </div>
     </div>
     <div class="col-12 col-md-4">
       <div class="card">
         <i class="fas fa-calendar-check card-icon"></i>
         <h3 class="card-title">Consultas Hoje</h3>
-        <p class="card-value">28</p>
+        <p class="card-value" id="totalAppointmentsToday"></p>
       </div>
     </div>
     <div class="col-12 col-md-4">
