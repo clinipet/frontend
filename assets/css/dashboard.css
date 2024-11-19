@@ -256,7 +256,7 @@ body {
     margin: 0 auto;
 }
 
-/* Estilo para o conteúdo do modal */
+
 .modal-content {
     margin: auto;
     max-width: 500px;
@@ -265,7 +265,6 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Estilo para o cabeçalho do modal */
 .modal-header {
     border-bottom: 1px solid #e9ecef;
     background-color: var(--primary-color);
@@ -275,32 +274,27 @@ body {
     padding: 1rem;
 }
 
-/* Estilo para o botão de fechar no cabeçalho */
 .modal-header .btn-close {
     color: white;
     opacity: 1;
 }
 
-/* Estilo para o corpo do modal */
 .modal-body {
     padding: 1.5rem;
 }
 
-/* Estilo para o rodapé do modal */
 .modal-footer {
     border-top: 1px solid #e9ecef;
     padding: 1rem;
     gap: 0.5rem;
 }
 
-/* Ajuste para centralização vertical em telas maiores */
 @media (min-width: 576px) {
     .modal-dialog {
         min-height: calc(100% - 3.5rem);
     }
 }
 
-/* Estilo para os botões do modal */
 .modal-footer .btn {
     min-width: 100px;
     padding: 0.5rem 1rem;
@@ -317,7 +311,6 @@ body {
     border: none;
 }
 
-/* Overlay do modal com fundo escuro */
 .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.5);
 }
