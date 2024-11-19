@@ -501,12 +501,12 @@ function postPetDelete(){
                 successModal('Pet excluído com sucesso!');
             } else if (response.status === 400) {
                 return response.json().then(data => {
-                    // errorModal('Erro ao excluir pet: ' + data.message);
+                    errorModal('Erro ao excluir pet: ' + data.message);
                     throw new Error(data.message || 'Erro ao excluir pet');
                 });
             } else {
                 errorContext = data.message;
-                // errorModal('Erro ao excluir pet: ' + data.message);
+                errorModal('Erro ao excluir pet: ' + data.message);
                 throw new Error('Erro ao excluir pet');
             }
             return response.json();
@@ -516,7 +516,7 @@ function postPetDelete(){
             successModal('Pet excluído com sucesso!');
         })
         .catch(error => {
-            // errorModal('Erro ao excluir pet!');
+            errorModal('Erro ao excluir pet!');
             console.error('Erro ao excluir pet:', error);
         });
 }
